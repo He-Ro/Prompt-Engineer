@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Summary</title>
+		<script type="text/javascript" src="textFit.js"></script>
+		<script type="text/javascript" src="summary.js"></script>
+		<link rel="stylesheet" type="text/css" href="summary.css">
+		<link rel="stylesheet" type="text/css" href="spinner.css">
+	</head>
+	<body>
+		<div id="question"></div>
+
+		<main id="boxes">
+			<div id="PlayerX">
+
+				<div id="PlayerX_Text"></div>
+
+				<div class="content">
+					<div class="additional_infos">
+						<div class="headline" style="display:flex;" float="left">
+							<div>PlayerX</div>
+							<div id="Points_PlayerX">0000</div>
+						</div>
+						<div id="hands">
+							<!-- static hand -->
+							<object
+									data="hand_outline.svg"
+									type="image/svg+xml"
+									hidden="hidden"
+									id="PlayerX-static-hand"
+									class="static-hand"></object>
+							<!-- LEFT HAND -->
+							<object
+									data="hand.svg"
+									type="image/svg+xml"
+									id="PlayerX-left-hand"
+									class="left-hand left-hand-clap"
+									hidden="hidden"
+									></object>
+							<!-- RIGHT HAND -->
+							<object
+									data="hand.svg"
+									type="image/svg+xml"
+									id="PlayerX-right-hand"
+									class="right-hand right-hand-clap"
+									hidden="hidden"
+									></object>
+						</div>
+						<div id="PlayerX_Applaus" hidden="hidden"></div>
+					</div>
+
+					<img id="PlayerX_Image" hidden="true"/>
+
+					<img hidden="hidden" id="thinking-img-PlayerX"</img>
+
+					<div hidden="hidden" class="spinner">
+						<img id="spinner-img-PlayerX" src="cloud.svg"</img>
+						<div class="blur-circle"></div>
+						<div class="load_gears">
+							<div class="gear">
+								<div class="center"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+							</div>
+							<div class="gear gear-two">
+								<div class="center"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+							</div>
+							<div class="gear gear-three">
+								<div class="center"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div id="PlayerY">
+
+				<div id="PlayerY_Text"></div>
+
+				<div class="content">
+
+					<div class="additional_infos">
+						<div class="headline" style="display:flex;" float="right">
+							<div >PlayerY</div>
+							<div id="Points_PlayerY">0000</div>
+						</div>
+						<div id="hands">
+							<!-- static hand -->
+							<object
+									data="hand_outline.svg"
+									type="image/svg+xml"
+									hidden="hidden"
+									id="PlayerY-static-hand"
+									class="static-hand"></object>
+							<!-- LEFT HAND -->
+							<object
+									data="hand.svg"
+									type="image/svg+xml"
+									id="PlayerY-left-hand"
+									class="left-hand-clap left-hand"
+									hidden="hidden"
+									></object>
+							<!-- RIGHT HAND -->
+							<object
+									data="hand.svg"
+									type="image/svg+xml"
+									id="PlayerY-right-hand"
+									class="right-hand-clap right-hand"
+									hidden="hidden"
+									></object>
+						</div>
+						<div id="PlayerY_Applaus" hidden="hidden"></div>
+					</div>
+					<img id="PlayerY_Image" hidden="true"/>
+					<img hidden="hidden" id="thinking-img-PlayerY"</img>
+
+					<div hidden="hidden" class="spinner">
+						<img id="spinner-img-PlayerY" src="cloud.svg"</img>
+
+						<div class="blur-circle"></div>
+						<div class="load_gears">
+							<div class="gear">
+								<div class="center"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+							</div>
+							<div class="gear gear-two">
+								<div class="center"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+							</div>
+							<div class="gear gear-three">
+								<div class="center"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="countdown" hidden="hidden"></div>
+		</main>
+	</body>
+</html>

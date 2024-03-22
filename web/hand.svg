@@ -1,0 +1,29 @@
+<!--
+Based on the following work:
+
+Copyright (c) 2024 by Jake Baker (https://codepen.io/_jakebaker_/pen/mdOrjGG)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   aria-hidden="true"
+   viewBox="0 0 446.31882 470.49689"
+   version="1.1"
+   id="svg1"
+   width="446.31882"
+   height="470.49689"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <path
+     d="m 363.09873,71.00877 c -17.74639,1.93091 -29.64172,18.58158 -27.11275,36.43896 l 15.84549,92.66214 c 0.63579,3.63079 -1.65299,7.13253 -5.23371,8.00738 -2.7857,0.6999 -5.71626,-0.37294 -7.39162,-2.706 L 202.00498,15.311392 c -8.14054,-11.2791716 -24.46516,-11.9406316 -35.75244,-3.79424 -11.28728,8.146392 -15.1776,23.397619 -7.03706,34.67679 L 250.8858,173.20828 c 3.61627,4.89127 2.68516,11.77188 -2.10106,15.52608 -4.92369,3.69857 -11.92436,2.63494 -15.52735,-2.35912 L 113.28538,20.147331 C 105.14484,8.8681594 90.368988,7.0889114 79.081704,15.235303 67.794423,23.381695 64.60145,38.129625 72.74199,49.408796 L 192.50332,215.34479 c 3.61627,4.89127 2.68516,11.77188 -2.10106,15.52608 -4.92369,3.69857 -11.92436,2.63494 -15.52735,-2.35912 L 73.630235,88.23161 C 65.489695,76.95244 49.789448,75.84035 38.502168,83.98675 27.214888,92.13314 23.909797,108.19523 32.050337,119.4744 L 141.86277,271.62565 c 3.61626,4.89127 2.68515,11.77187 -2.10106,15.52608 -4.92369,3.69856 -11.92436,2.63493 -15.52735,-2.35913 L 51.080691,183.43412 c -8.14054,-11.27917 -23.029919,-12.97648 -34.3172,-4.83009 -11.2872803,8.14639 -14.3879563,22.98803 -6.226192,34.09156 L 136.94683,387.84304 c 68.71178,95.204 177.05568,89.26464 232.73921,49.07605 l 12.97389,-9.36367 c 56.72094,-40.93731 64.79814,-107.93593 52.92555,-159.05623 L 398.24875,99.3601 C 393.08257,80.89026 380.83116,69.07561 363.09873,71.00877 Z"
+     fill="currentColor"
+     id="path1"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:12.0945;stroke-dasharray:none;stroke-opacity:1" />
+</svg>

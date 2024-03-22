@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+		.slides {
+			display:none;
+		}
+		.animate-left {
+			display: block;
+			position: relative;
+			animation: animateleft 0.8s
+		}
+
+		@keyframes animateleft {
+			from { left :-500px; opacity:0 }
+			to { left:0; opacity:1 }
+		}
+
+		figure {
+			width:85vh;
+			border: 1px #cccccc solid;
+			padding: 4px;
+			margin: auto;
+		}
+
+		figcaption {
+			background-color: black;
+			color: white;
+			font-style: italic;
+			padding: 2px;
+			text-align: center;
+		}
+		</style>
+	</head>
+	<body>
+
+		<div class="simpleSlides">
+		</div>
+
+		<script>
+			const simpleSlides = function (options) {
+				const Slideshow = {
+					init: function (options) {
+						this.count = 0;
+						this.slides = document.querySelectorAll(".slides");
+						this.numslides = this.slides.length;
+						options = options || {};
+						this.opts = {
+							speed:(typeof options.speed === "undefined") ? 3600 : options.speed,
+							animate:(typeof options.animate === "undefined") ? "animate-bottom" : options.animate
+						}
+						this.slides[0].classList.add(this.opts.animate);
+						this.autoCycle(this.opts.speed)
+					},
+					showSlide: function (i) {
+						if (i>0) {
+							this.count = (this.count + 1 === this.numslides) ? 0 : this.count + 1;
+						} else {
+							this.count = (this.count -1 < 0) ? this.numslides - 1 : this.count - 1;
+						}
+						document.querySelector("." + this.opts.animate).classList.remove(this.opts.animate);
+						this.slides[this.count].classList.add(this.opts.animate);
+					},
+					autoCycle: function (speed) {
+						const that = this,
+							interval = window.setInterval (function () {
+								that.showSlide(1);
+							},speed);
+					}
+				}
+
+				const slideshow = Object.create(Slideshow);
+				console.log(slideshow)
+				slideshow.init(options);
+			}
+
+			const opts = {
+				speed: 5000,
+				animate: "animate-left"
+			}
+
+
+			var ws = null;
+			function startWebsocket() {
+				ws = null;
+				ws = new WebSocket('ws://' + document.domain + ':1337')
+
+				ws.onopen = function(){
+					console.log("Socket open");
+					ws.send(JSON.stringify({"action": "init", "player": "Slideshow"}));
+				};
+
+				// Error handling
+				ws.onclose = function() {
+					console.log("Socket closed");
+					setTimeout(startWebsocket, 500);
+				};
+				ws.onerror = function() {
+					console.log("Socket error");
+					ws.onclose = null; // Avoid recursive restart
+					setTimeout(startWebsocket, 500);
+				};
+				ws.onmessage = function(evt) {
+					var received_msg = JSON.parse(evt.data);
+					console.log(received_msg);
+					if (received_msg["action"] == "init_response") {
+						var images = received_msg["images"];
+						for (let image of images) {
+							let figure = document.createElement("figure");
+							figure.setAttribute("class", "slides");
+							let img = document.createElement("img");
+							img.setAttribute("width", "100%");
+							img.setAttribute("src", image["path"]);
+							figure.appendChild(img);
+							let caption = document.createElement("figcaption");
+							caption.innerText = image["prompt"];
+							figure.appendChild(caption);
+							let simple = document.querySelector(".simpleSlides");
+							simple.appendChild(figure);
+						}
+						simpleSlides(opts);
+					}
+				};
+			}
+
+			startWebsocket();
+
+		</script>
+
+	</body>
+</html>

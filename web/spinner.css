@@ -1,0 +1,171 @@
+/*
+Based and adapted from:
+
+Copyright (c) 2024 by Nimesh Prajapati (https://codepen.io/nimeshp/pen/bMqEBj)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+.spinner {
+	overflow: hidden;
+	width: 355px;
+	height: 205px;
+	margin-left: auto;
+	margin-right: auto;
+	transform: translate(0, 50%);
+}
+#PlayerY .spinner {
+	transform: translate(0, 50%);
+}
+
+.spinner img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.blur-circle {
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  box-shadow: 0px 0px 0px 13px rgba(255, 255, 255, 1),
+    0px 0px 19px 0px rgba(0, 0, 0, 0.16) inset;
+  border-radius: 50%;
+  z-index: 99;
+  position: relative;
+  left: 0px;
+  right: 0;
+  top: -170px;
+  bottom: 0;
+  margin: auto;
+}
+.load_gears {
+  z-index: 98;
+  width: 150px;
+  height: 150px;
+  top: -316px !important;
+  position: relative;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.gear {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  background: #198;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration:6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: -5px;
+  left: 0;
+  right: 0;
+}
+#PlayerY .gear {
+	animation-duration: 5s;
+}
+.gear .center {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 110;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.bar {
+  position: absolute;
+  top: -10px;
+  left: 28px;
+  z-index: 101;
+  width: 22px;
+  height: 100px;
+  background: #198;
+}
+.bar:nth-child(2) {
+  transform: rotate(45deg);
+}
+.bar:nth-child(3) {
+  transform: rotate(90deg);
+}
+.bar:nth-child(4) {
+  transform: rotate(135deg);
+}
+
+.gear-two {
+  left: -90px;
+  top: 68px;
+  width: 55px;
+  height: 55px;
+  background: #f58bb6;
+  animation-name: spin-reverse;
+}
+.gear-two .bar {
+  background: #f58bb6;
+  width: 14px;
+  height: 70px;
+  left: 20px;
+  top: -8px;
+}
+.gear-two .center {
+  width: 28px;
+  height: 28px;
+  left: 13px;
+  top: 13px;
+}
+.gear-three {
+  left: 90px;
+  top: 68px;
+  width: 55px;
+  height: 55px;
+  background: #576e81;
+  animation-name: spin-reverse;
+}
+.gear-three .bar {
+  background: #576e81;
+  width: 14px;
+  height: 70px;
+  left: 20px;
+  top: -8px;
+}
+.gear-three .center {
+  width: 28px;
+  height: 28px;
+  left: 13px;
+  top: 13px;
+}
+
+@-webkit-keyframes spin {
+  50% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  50% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin-reverse {
+  50% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@keyframes spin-reverse {
+  50% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}

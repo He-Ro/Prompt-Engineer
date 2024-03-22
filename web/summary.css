@@ -1,0 +1,243 @@
+
+
+@font-face {
+  font-family: Arvo;
+  src: url(fonts/arvo/Arvo-Regular.woff2);
+}
+
+@font-face {
+  font-family: Arvo;
+  src: url(fonts/arvo/Arvo-Bold.woff2);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Arvo;
+  src: url(fonts/arvo/Arvo-Italic.woff2);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Arvo;
+  src: url(fonts/arvo/Arvo-BoldItalic.woff2);
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Caveat;
+  src: url(fonts/caveat/Caveat-VariableFont_wght.woff2);
+}
+
+html {
+	font-family: "Arvo", Times, serif;
+	overflow: hidden;
+}
+body {
+	margin: 0;
+}
+#boxes {
+	height: 89vh;
+	width: 100%;
+}
+#PlayerY, #PlayerX {
+	clear: none;
+	float: left;
+	height: 88vh;
+	width: calc(50vw - 1.5vh);
+}
+#PlayerY {
+	float: right;
+	margin: 1vh 1vh 0vh 0vh;
+	background-color: #fff599;
+	color: #4a4621;
+}
+#PlayerX{
+	margin: 1vh 0vh 0vh 1vh;
+	background-color: #f497f1;
+	color: #660B63;
+}
+
+#PlayerY_Text, #PlayerX_Text {
+	font-family: "Caveat", Times, serif;
+	font-weight: 800;
+	height: 24vh;
+	overflow-wrap: break-word;
+	padding: 1vh;
+}
+
+.content {
+	height: 61.5vh;
+	overflow: hidden;
+	width: 100%;
+}
+
+#PlayerX .additional_infos {
+	margin: 1vh 0vh 1vh 1vh;
+}
+
+#PlayerY .content {
+	float: right;
+}
+#PlayerY .additional_infos {
+	margin: 1vh 1vh 1vh 0vh;
+	float: right;
+}
+
+.additional_infos {
+	font-size: 35px;
+	margin: 1vh 1vh 1vh 1vh;
+	float: left;
+	width: calc(10vw - 1vh);
+	height: calc(100% - 2vh);
+}
+
+#question {
+	width: calc(100% - 1vh);
+	height: 9vh;
+	text-align: center;
+	padding: 0.5vh;
+}
+
+#PlayerX_Image, #PlayerY_Image {
+	float: left;
+	object-fit: contain;
+	height: 100%;
+	width: calc(100% - 10vw - 2vh);
+}
+
+#PlayerY_Image {
+	float: right;
+}
+
+#thinking-img-PlayerY, #thinking-img-PlayerX {
+	position: relative;
+	width: calc(40vw - 3.5vh);
+	height: 61vh;
+	object-fit: contain;
+	left: 1vh;
+}
+
+#hands {
+	padding-top: 20px;
+	width: 8vw;
+	height: 8vw;
+}
+
+.static-hand {
+	width: 8vw;
+	height: 8vw;
+	opacity: 70%;
+	position: absolute;
+	transform: translate(0.15rem, 0.15rem) scale(1);
+}
+
+.left-hand {
+	width: 8vw;
+	height: 8vw;
+	opacity: 70%;
+	position: absolute;
+	transform: translate(0.15rem, 0.15rem) scale(1);
+}
+
+.headline {
+	margin: 5px 5px 0px 5px;
+	flex-direction: column;
+}
+
+#PlayerY .headline {
+	text-align: right;
+}
+
+#PlayerY #hands {
+	float: right;
+	filter: invert(24%) sepia(63%) saturate(325%) hue-rotate(17deg) brightness(94%) contrast(96%);
+	margin-left: auto;
+	margin-right: 5px;
+}
+
+#PlayerX #hands {
+	filter: invert(10%) sepia(83%) saturate(3507%) hue-rotate(290deg) brightness(95%) contrast(102%);
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+/*
+Clapping hands are based on the following work:
+
+Copyright (c) 2024 by Jake Baker (https://codepen.io/_jakebaker_/pen/mdOrjGG)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+.left-hand-clap {
+	animation: left-hand-clap ease-in-out 0.5s infinite;
+}
+
+#PlayerY_Applaus, #PlayerX_Applaus {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	width: 100px;
+	text-align: center;
+}
+
+#PlayerY_Applaus {
+	margin-left: auto;
+}
+
+.right-hand {
+	width: 8vw;
+	height: 8vw;
+	opacity: 100%;
+	position: absolute;
+	transform: translate(5%, 0) skew(0deg);
+}
+.right-hand-clap {
+	animation: right-hand-clap ease-in-out 0.5s infinite;
+}
+
+.clap {
+	opacity: 0;
+	animation-delay: 0.5s;
+	animation: clap ease-in-out 0.5s infinite;
+}
+
+@keyframes left-hand-clap {
+	50% {
+		transform: translate(0.15rem, 0.15rem) scale(0.85);
+	}
+}
+
+@keyframes right-hand-clap {
+	50% {
+		transform: translate(4%, 0) scale(1.1) rotate(2deg) skew(0deg);
+	}
+}
+
+@keyframes clap {
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+#countdown {
+	width: 14vw;
+	height: 10vh;
+	border-radius: 10vh;
+	background: rgba(64,64,64,0.5);
+	position: fixed;
+	display: none;
+	transform: translate(43vw, 72vh);
+	color: white;
+	font-size: 8vh;
+	justify-content: center;
+	align-items: center;
+	font-family: monospace, monospace;
+}

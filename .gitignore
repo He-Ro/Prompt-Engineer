@@ -1,0 +1,6 @@
+images.json
+venv
+config.ini
+*swp
+.DS_Store
+web/images/

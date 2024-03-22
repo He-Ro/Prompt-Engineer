@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Controler</title>
+
+		<link rel="stylesheet" type="text/css" href="controller.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div id="outline">
+			<label for="question">Instructions:</label>
+			<select name="question" id="question">
+				<option>What does a drunk person see when they look through a telescope?</option>
+				<option>What is your favorite meal?</option>
+				<option>Next instruction.</option>
+				<option>A further instruction.</option>
+				<option>The last pre-made instruction.</option>
+			</select>
+			<div style="flex-direction: row">
+				<input type="checkbox" id="checkbox_custom_question" name="checkbox_custom_question" value="checkbox_custom_question"> <label for="checkbox_custom_question">Use Custom Instructions:</label><br>
+			</div>
+			<input id="custom_question" style="min-width: 80vw" type="text" value=""></input>
+			<br/>
+			<button onclick="show_next_question()">Show Next Question</button>
+			<br/>
+			<button onclick="start_image_generation()">Start Image Generation</button>
+			<br/>
+			<div style="flex-direction: row">
+				<button style="min-width: 40vw" onclick="start_applaus('PlayerX')">Start Applause PlayerX</button>
+				<button style="min-width: 40vw" onclick="start_applaus('PlayerY')">Start Applause PlayerY</button>
+			</div>
+			<br/>
+			Points PlayerX
+			<div style="flex-direction: row">
+				<button style="min-width: 40vw" onclick="change_points('PlayerX', -1)">-</button>
+				<button style="min-width: 40vw" onclick="change_points('PlayerX', 1)">+</button>
+			</div>
+			<br/>
+			Points PlayerY
+			<div style="flex-direction: row">
+				<button style="min-width: 40vw" onclick="change_points('PlayerY', -1)">-</button>
+				<button style="min-width: 40vw" onclick="change_points('PlayerY', 1)">+</button>
+			</div>
+			<br/>
+			Timeout
+			<div style="flex-direction: row">
+				<input id="timeout_value" style="min-width: 40vw" type="number" min="1" max="240" value="60"></input>
+				<button style="min-width: 40vw" onclick="set_timeout()">Apply</button>
+			</div>
+			<br/>
+			Manual Override
+			<div style="flex-direction: row">
+				<button style="min-width: 40vw" onclick="activate_input(true)">Enable Inputs</button>
+				<button style="min-width: 40vw" onclick="activate_input(false)">Disable Inputs</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="controller.js"></script>
+	</body>
+</html>
