@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 import argparse
+import httpcore
 import base64
 import configparser
 import datetime
@@ -141,10 +142,13 @@ async def send_applaus_control(command, http_client):
         await http_client.get(
             f"http://{game_state['ip_applaus']}:8080/control", params=command
         )
-    except httpx.RemoteProtocolError:
-        await http_client.get(
-            f"http://{game_state['ip_applaus']}:8080/control", params=command
-        )
+    except (httpx.RemoteProtocolError, httpcore.ReadError, httpx.ConnectError):
+        try:
+            await http_client.get(
+                f"http://{game_state['ip_applaus']}:8080/control", params=command
+            )
+        except (httpx.RemoteProtocolError, httpcore.ReadError, httpx.ConnectError):
+            print("ERROR: Connection to PhyPhox failed!")
 
 
 async def ws_handler(request):  # noqa: C901
