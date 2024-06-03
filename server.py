@@ -13,6 +13,7 @@ from io import BytesIO
 
 import httpx
 import trio
+import openai
 from openai import AsyncOpenAI
 from PIL import Image
 from trio_websocket import ConnectionClosed, serve_websocket
@@ -86,14 +87,23 @@ async def create_image(nursery, player, prompt):
     if PRODUCTION:
         # Create image with Dall_e
         start_time = trio.current_time()
-        response = await oai_client.images.generate(
-            model=config["dall_e_version"],
-            prompt=prompt,
-            size=config["image_size"],
-            quality="standard",
-            response_format="b64_json",
-            n=1,
-        )
+        try:
+            response = await oai_client.images.generate(
+                model=config["dall_e_version"],
+                prompt=prompt,
+                size=config["image_size"],
+                quality="standard",
+                response_format="b64_json",
+                n=1,
+            )
+        except openai.BadRequestError:
+            logging.exception("Image was not created")
+            with open(f"oops.png", "rb") as f:
+                picture = f.read()
+                b64_image = base64.b64encode(picture).decode("utf-8")
+            message = {"action": "show_picture", "player": player, "picture": b64_image}
+            send_summary_message(nursery, json.dumps(message))
+            return
         creation_time = trio.current_time() - start_time
         logging.info(f"Image cration finished in {creation_time}")
 
